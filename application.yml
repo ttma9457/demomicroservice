@@ -4,9 +4,9 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   datasource:
-    url: jdbc:postgresql://103.56.156.132:5432/haole1
+    url: jdbc:postgresql://localhost:5432/haole1
     username: postgres
-    password: 123@#as23QA&
+    password: postgres
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,13 +14,14 @@ spring:
       hibernate:
         id:
           new_generator_mappings: false
-#  cache:
-#    type: redis
-#    redis:
-#      cache-null-values: true
-#      #Time to check redis is running or not
-#      time-to-live: '45000'
-#  redis:
-#    host: localhost
-#    port: '9001'
-#    timeout: '30000'
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  flyway:
+    baselineOnMigrate: true
+    locations: classpath:db/migration
+    url: jdbc:postgresql://localhost:5432/haole1
+    user: postgres
+    password: postgres
