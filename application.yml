@@ -6,11 +6,10 @@
 #     url: jdbc:postgresql://localhost:5432/haole1
 #     user: postgres
 #     password: postgres
-
-#   mvc:
-#     pathmatch:
-#       matching-strategy: ant_path_matcher
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   datasource:
     url: jdbc:postgresql://localhost:5432/haole1
     username: postgres
